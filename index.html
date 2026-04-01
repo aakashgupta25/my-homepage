@@ -414,6 +414,66 @@
     .connect-value { font-size: 0.93rem; font-weight: 500; }
     .connect-meta { font-size: 0.78rem; color: var(--text-muted); margin-top: 1px; transition: color 0.25s ease; }
 
+    /* ── Contact Form ── */
+    .contact-form {
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .form-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+    .form-input, .form-textarea {
+      width: 100%;
+      padding: 12px 16px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      color: var(--text-primary);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      transition: all 0.25s ease;
+    }
+    .form-input:focus, .form-textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-glow);
+    }
+    .form-textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    .form-submit {
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 14px 24px;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+    }
+    .form-submit:hover {
+      background: #8b7dfb; /* slightly lighter accent */
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px var(--accent-glow);
+    }
+
     /* ── Responsive ── */
     @media (max-width: 560px) {
       .card { padding: 28px 22px; }
@@ -573,6 +633,28 @@
         </a>
 
       </div>
+
+      <!-- Contact Form -->
+      <form class="contact-form" action="https://formspree.io/f/xbdpkqoj" method="POST">
+        <div class="form-group">
+          <label class="form-label" for="name">Name</label>
+          <input type="text" id="name" name="name" class="form-input" placeholder="Your name" required />
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label" for="email">Email</label>
+          <input type="email" id="email" name="email" class="form-input" placeholder="Your email address" required />
+        </div>
+        
+        <div class="form-group">
+          <label class="form-label" for="message">Message</label>
+          <textarea id="message" name="message" class="form-textarea" placeholder="How can we help each other?" required></textarea>
+        </div>
+        
+        <button type="submit" class="form-submit">
+          Send Message <span class="emoji">✉️</span>
+        </button>
+      </form>
     </section>
 
   </div>
